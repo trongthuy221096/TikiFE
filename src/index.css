@@ -182,3 +182,12 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.css-dev-only-do-not-ove
   > td {
   padding: 10px 8px;
 }
+
+button.ant-btn.css-2i2tap.ant-btn-primary.ant-input-search-button {
+  height: 40px;
+  font-size: 20px;
+  background-color: #319795;
+  padding-top: 5px !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
