@@ -191,3 +191,11 @@ button.ant-btn.css-2i2tap.ant-btn-primary.ant-input-search-button {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+:where(.css-2i2tap).ant-input-affix-wrapper:hover {
+    border-color: #d9d9d9;
+}
+
+input.ant-input.ant-input-lg.css-2i2tap {
+    border-right: 1px solid #d9d9d9;
+}
