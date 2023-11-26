@@ -220,7 +220,7 @@ function HeaderComponent() {
                             <WrapperLocationHeader>
                                 Giao đến :
                                 <WrapperAddressHeader>
-                                    {user.address}
+                                &nbsp;{user.address || "chưa cập nhập thông tin"}
                                 </WrapperAddressHeader>
                             </WrapperLocationHeader>
                         </Flex>

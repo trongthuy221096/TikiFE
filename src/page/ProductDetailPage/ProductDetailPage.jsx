@@ -24,7 +24,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useDispatch, useSelector } from "react-redux";
 import SignInComponent from "../../components/SignInComponent/SignInComponent";
 import { addOrderProduct } from "../../redux/slice/orderSlide";
-import { convertPrice } from "../../ultils";
+import { convertPrice, getStringDate } from "../../ultils";
+import LoadingComponent from "../../components/LoadingComponent/LoadingComponent";
 
 const ProductDetailPage = () => {
     const user = useSelector((state) => state?.user);
@@ -44,11 +45,10 @@ const ProductDetailPage = () => {
         return res;
     };
 
-    const { data: product } = useQuery({
+    const { data: product ,isFetching} = useQuery({
         queryKey: ["products"],
         queryFn: () => getDetailsProduct(id),
     });
-
     const onChange = (value) => {
         setCount(value);
     };
@@ -84,6 +84,7 @@ const ProductDetailPage = () => {
     };
     return (
         <div>
+            <LoadingComponent isPending={isFetching}>
             <Row style={{ padding: "16px" }}>
                 <SignInComponent
                     isModalOpen={isModalOpen}
@@ -167,14 +168,8 @@ const ProductDetailPage = () => {
                                         Thông tin vận chuyển
                                     </WrapperTitle>
                                     <WrapperAddressProduct justify="space-between">
-                                        <div>Giao đến {user?.address}</div>
-                                        <div
-                                            style={{
-                                                color: "rgb(10, 104, 255)",
-                                            }}
-                                        >
-                                            Đổi
-                                        </div>
+                                        <div>Giao đến : {user?.address || "chưa cập nhập thông tin"}</div>
+                                      
                                     </WrapperAddressProduct>
                                     <WrapperAddressProduct vertical>
                                         <Flex align="center">
@@ -186,10 +181,10 @@ const ProductDetailPage = () => {
                                                     fontWeight: "500",
                                                 }}
                                             >
-                                                Giao thứ Tư
+                                                     {getStringDate()}
                                             </div>
                                         </Flex>
-                                        <span>Trước 19h, 22/11</span>
+                                     
                                     </WrapperAddressProduct>
                                 </Flex>
                             </WrapperItemContent>
@@ -310,6 +305,7 @@ const ProductDetailPage = () => {
                     </WrapperItemContent>
                 </Col>
             </Row>
+            </LoadingComponent>
         </div>
     );
 };
