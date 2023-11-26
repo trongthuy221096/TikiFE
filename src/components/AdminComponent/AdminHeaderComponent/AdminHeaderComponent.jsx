@@ -21,6 +21,8 @@ const AdminHeaderComponent = ({ collapsed, setCollapsed }) => {
         dispatch(resetUser());
         localStorage.setItem("access_token", "");
         localStorage.setItem("refresh_token", "");
+        localStorage.setItem("isAdmin", "");
+        navigate("/");
     };
     const content = (
         <div>

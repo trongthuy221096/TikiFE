@@ -199,3 +199,10 @@ button.ant-btn.css-2i2tap.ant-btn-primary.ant-input-search-button {
 input.ant-input.ant-input-lg.css-2i2tap {
     border-right: 1px solid #d9d9d9;
 }
+
+:where(.css-2i2tap).ant-input-affix-wrapper:focus, :where(.css-2i2tap).ant-input-affix-wrapper:focus-within {
+    border-color: #d9d9d9;
+    box-shadow:unset;
+    outline: 0;
+    border-right: none;
+}

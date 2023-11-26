@@ -47,9 +47,9 @@ function HeaderComponent() {
     const onSearch = (value) => {
         navigate(`/search?q=${value}`);
     };
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(true);
     const user = useSelector((state) => state.user);
-    const order = useSelector((state) => state.order);
+    const order =  useSelector((state) => state.order);
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
     const showModal = () => {
