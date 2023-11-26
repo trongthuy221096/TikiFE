@@ -217,7 +217,6 @@ const ProductPage = () => {
     }));
   }, [listProduct?.total]);
   
-console.log(tableParams);
   useEffect(() => {
     refetch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
