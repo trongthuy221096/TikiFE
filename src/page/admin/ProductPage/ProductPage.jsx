@@ -9,7 +9,7 @@ import { FaPlus } from "react-icons/fa6";
 import { MdEdit, MdDelete } from "react-icons/md";
 import { AiOutlineEye } from "react-icons/ai";
 import { useQuery } from "@tanstack/react-query";
-import { comparePrice, compareString } from "../../../ultils";
+import { comparePrice, compareString, convertPrice } from "../../../ultils";
 import { IoIosSearch } from "react-icons/io";
 import { WrapperExportExcelButton } from "../AdminPage/style";
 import { Excel } from "antd-table-saveas-excel";
@@ -79,6 +79,7 @@ const ProductPage = () => {
     {
       title: "Giá",
       dataIndex: "price",
+      render: (price) => convertPrice(price),
       sorter: (a, b) => comparePrice(a.price, b.price),
     },
     {
