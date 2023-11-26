@@ -144,7 +144,7 @@ const ProductPage = () => {
     data: listUser,
     refetch,
     isLoading,
-    isFetching,
+    isFetching
   } = useQuery({
     queryKey: ["user"],
     queryFn: () =>
@@ -256,7 +256,7 @@ const ProductPage = () => {
                 <Search
                   placeholder="Nhập thông tin..."
                   enterButton={
-                    <Button type="primary" htmlType="submit">
+                    <Button type="primary" htmlType="submit" >
                       <IoIosSearch />
                     </Button>
                   }
@@ -274,7 +274,7 @@ const ProductPage = () => {
             </Flex>
           </WrapperExportExcelButton>
         </Flex>
-        <LoadingComponent isPending={isLoading || isFetching}>
+        <LoadingComponent isPending={isLoading || isFetching }>
           <Table
             ref={tableRef}
             columns={columns}
